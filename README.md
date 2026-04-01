@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gladius
 
-## Getting Started
+**A permanent record of firearm deaths worldwide.**
 
-First, run the development server:
+Built to last. Built to be verified. Built to never look away.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Live
+
+**https://gladiusledger.com**
+
+Part of the [BluRing Holdings Civic Ledger Suite](#civic-ledger-suite).
+
+---
+
+## What It Records
+
+Firearm deaths across the globe — from every source that measures them.
+
+- **Country by Country** — WHO Global Health Observatory firearm mortality
+- **United States** — CDC WONDER annual data (1968–2024), Gun Violence Archive daily
+- **Conflicts** — UCDP conflict-related firearm deaths
+- **Economic Cost** — the measured global toll
+- **Policy Timeline** — what happened, what followed, worldwide
+- **Data Gaps** — countries that do not report are recorded as gaps, not omitted
+
+---
+
+## What It Does Not Do
+
+- It does not advocate for any position
+- It does not predict outcomes
+- It does not interpret what the data means
+- It is not affiliated with any government or international organization
+
+It records what WHO, CDC, UCDP, and Gun Violence Archive report.
+Nothing more. Nothing less.
+
+*The absence of data is also data.*
+
+---
+
+## Data Sources
+
+| Source | Data | Scope |
+|--------|------|-------|
+| WHO Global Health Observatory | Firearm mortality by country | Global |
+| CDC WONDER | Annual firearm mortality (1968–2024) | United States |
+| UCDP | Conflict-related deaths | Global |
+| Geneva Small Arms Survey | Firearms research and estimates | Global |
+| Gun Violence Archive | YTD incidents, deaths, injuries | United States |
+
+All data is sourced directly from public records.
+No data is manufactured, estimated, or interpolated.
+
+---
+
+## Architecture
+
+```
+Next.js 14 App Router
+Supabase (PostgreSQL) — dedicated project
+Vercel — production deploy
+GitHub Actions — daily GVA ingest cron
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ledger Principles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Append-only** — no record is ever modified or deleted
+2. **Source cited** — every entry links to its data source
+3. **Public read** — all data is publicly accessible
+4. **No mock data** — ever, in any environment
+5. **No editorial position** — data only
+6. **Plain language** — every number gets a human translation (EN + ES)
+7. **Gap entries** — countries that don't report are recorded, not omitted
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Civic Ledger Suite
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Gladius is Ledger #5 of the BluRing Holdings Civic Ledger Suite.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| # | Ledger | URL |
+|---|--------|-----|
+| 1 | Cathedral Ledger | cathedral-ledger.vercel.app |
+| 2 | Cape Fear Memoria | cape-fear-memoria.vercel.app |
+| 3 | The Long Watch | longwatch.win |
+| 4 | Council of Witnesses | witness-ledger.vercel.app |
+| 5 | Gladius | gladiusledger.com |
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Local Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+git clone git@github.com:BlueRing-Holdings/gun-violence-ledger.git
+cd gun-violence-ledger
+npm install
+cp .env.example .env.local
+# Add your Supabase credentials
+npm run dev
+```
+
+App runs on port 3005.
+
+---
+
+## Deploy
+
+Push to `main` — Vercel deploys automatically.
+
+```bash
+git push origin main
+```
+
+---
+
+## License
+
+Built and operated by **BluRing Holdings LLC** — Wilmington, NC.
+
+This ledger is a civic instrument, not a commercial product.
+It is not for sale.
+
+---
+
+*The record does not look away.*

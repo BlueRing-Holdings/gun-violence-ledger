@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        serif: ['"Georgia"', '"Times New Roman"', "serif"],
+      },
     },
   },
   plugins: [],

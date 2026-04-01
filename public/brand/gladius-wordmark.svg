@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none">
+
+  <!-- Sword mark — scaled down, vertical, left side -->
+  <g transform="translate(4, 2) scale(0.5)">
+    <!-- Blade -->
+    <path d="M20 8 L23 52 L20 72 L17 52 Z" fill="currentColor" opacity="0.95"/>
+    <!-- Crossguard -->
+    <rect x="8" y="22" width="24" height="2.5" rx="1" fill="currentColor" opacity="0.85"/>
+    <!-- Grip -->
+    <rect x="18" y="8" width="4" height="14" rx="1" fill="currentColor" opacity="0.7"/>
+    <!-- Pommel -->
+    <circle cx="20" cy="6" r="3.5" fill="currentColor" opacity="0.8"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="52"
+    y="30"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="22"
+    font-weight="normal"
+    letter-spacing="6"
+    fill="currentColor"
+    opacity="0.95"
+  >GLADIUS</text>
+
+  <!-- Thin rule below wordmark -->
+  <line
+    x1="52"
+    y1="36"
+    x2="258"
+    y2="36"
+    stroke="currentColor"
+    stroke-width="0.75"
+    opacity="0.3"
+  />
+
+  <!-- Tagline -->
+  <text
+    x="52"
+    y="46"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="8"
+    letter-spacing="2.5"
+    fill="currentColor"
+    opacity="0.45"
+  >A RECORD OF FIREARM DEATHS WORLDWIDE</text>
+
+</svg>
