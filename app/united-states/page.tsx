@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import PageShell from "@/components/layout/PageShell";
 import { AnnualRecord, StateRecord, DemographicRecord } from "@/lib/types";
 import {
@@ -180,43 +181,22 @@ export default function UnitedStatesPage() {
 
       {/* Demographics Tab */}
       {tab === "demographics" && (
-        <>
-          {Object.keys(data.demographics).length === 0 ? (
-            <div className="bg-[#111108] rounded-lg p-12 text-center border border-[#2a2008]">
-              <p className="text-[#6b5a45]">Awaiting data...</p>
-            </div>
-          ) : (
-            <div className="space-y-8">
-              {Object.entries(data.demographics).map(([cat, records]) => (
-                <div key={cat}>
-                  <h3 className="text-lg font-serif text-[#f2ede4] mb-3 capitalize">
-                    {cat.replace("_", " ")}
-                  </h3>
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-[#2a2008]">
-                          <th className="text-left py-2 text-[#6b5a45] font-normal">Group</th>
-                          <th className="text-right py-2 text-[#6b5a45] font-normal">{lang === "en" ? "Deaths" : "Muertes"}</th>
-                          <th className="text-right py-2 text-[#6b5a45] font-normal">{lang === "en" ? "Rate/100k" : "Tasa/100k"}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {records.map((r) => (
-                          <tr key={r.group_name} className="border-b border-[#2a2008]/50">
-                            <td className="py-2 text-[#f2ede4]">{r.group_name}</td>
-                            <td className="py-2 text-right text-[#6b5a45] tabular-nums">{r.deaths.toLocaleString()}</td>
-                            <td className="py-2 text-right text-[#6b5a45] tabular-nums">{r.rate_per_100k?.toFixed(1) ?? "—"}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </>
+        <div className="bg-[#111108] rounded-lg p-8 text-center border border-[#2a2008]">
+          <h2 className="text-2xl font-serif text-[#f2ede4] mb-4">
+            {lang === "en" ? "Who Bears the Weight" : "Quién Lleva el Peso"}
+          </h2>
+          <p className="text-[#6b5a45] text-sm mb-6 max-w-lg mx-auto">
+            {lang === "en"
+              ? "Race, age, geography, conditions, and sources — a multi-source deep dive into who gun violence affects and how."
+              : "Raza, edad, geografía, condiciones y fuentes — un análisis profundo multi-fuente sobre a quién afecta la violencia armada y cómo."}
+          </p>
+          <Link
+            href="/united-states/demographics"
+            className="inline-block text-sm text-[#b8860b] border border-[#b8860b] rounded px-6 py-2 hover:bg-[#b8860b] hover:text-[#0a0a0a] transition-colors"
+          >
+            {lang === "en" ? "View Demographics Deep Dive" : "Ver Análisis Demográfico"}
+          </Link>
+        </div>
       )}
     </PageShell>
   );

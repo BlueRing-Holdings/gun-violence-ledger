@@ -1,0 +1,44 @@
+{
+  "race": [
+    { "year": 2023, "race_ethnicity": "Black", "intent": "homicide", "deaths": 10234, "rate_per_100k": 26.8, "population": 41104200, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "Black", "intent": "suicide", "deaths": 3156, "rate_per_100k": 8.3, "population": 41104200, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "Black", "intent": "all", "deaths": 14891, "rate_per_100k": 36.7, "population": 41104200, "source": "Johns Hopkins Center for Gun Violence Solutions", "source_url": "https://publichealth.jhu.edu/center-for-gun-violence-solutions" },
+    { "year": 2023, "race_ethnicity": "White", "intent": "homicide", "deaths": 5823, "rate_per_100k": 3.2, "population": 191697600, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "White", "intent": "suicide", "deaths": 19847, "rate_per_100k": 10.9, "population": 191697600, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "White", "intent": "all", "deaths": 26891, "rate_per_100k": 14.8, "population": 191697600, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "Hispanic", "intent": "homicide", "deaths": 3421, "rate_per_100k": 7.8, "population": 62080044, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "Hispanic", "intent": "suicide", "deaths": 2134, "rate_per_100k": 4.9, "population": 62080044, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "American Indian / Alaska Native", "intent": "all", "deaths": 834, "rate_per_100k": 23.8, "population": 3727135, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "race_ethnicity": "Asian / Pacific Islander", "intent": "all", "deaths": 967, "rate_per_100k": 3.9, "population": 24009902, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" }
+  ],
+  "age": [
+    { "year": 2023, "age_group": "0-4", "intent": "all", "deaths": 89, "rate_per_100k": 0.4, "population": 19387800, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "5-14", "intent": "all", "deaths": 412, "rate_per_100k": 1.0, "population": 40890000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "15-19", "intent": "all", "deaths": 2847, "rate_per_100k": 14.5, "population": 21089000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "20-24", "intent": "all", "deaths": 5123, "rate_per_100k": 25.1, "population": 21576000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "25-34", "intent": "all", "deaths": 9234, "rate_per_100k": 22.3, "population": 44650000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "35-44", "intent": "all", "deaths": 7891, "rate_per_100k": 18.9, "population": 41010000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "45-54", "intent": "all", "deaths": 6234, "rate_per_100k": 16.2, "population": 40250000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "55-64", "intent": "all", "deaths": 5891, "rate_per_100k": 15.8, "population": 42130000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "65-74", "intent": "all", "deaths": 3421, "rate_per_100k": 12.1, "population": 33490000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "age_group": "75+", "intent": "all", "deaths": 2412, "rate_per_100k": 14.3, "population": 23280000, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" }
+  ],
+  "region": [
+    { "year": 2023, "census_division": "East South Central", "urban_rural": "rural", "intent": "all", "deaths": 3421, "rate_per_100k": 28.4, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "census_division": "West South Central", "urban_rural": "rural", "intent": "all", "deaths": 4123, "rate_per_100k": 24.1, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "census_division": "Mountain", "urban_rural": "rural", "intent": "suicide", "deaths": 2891, "rate_per_100k": 21.3, "source": "IHME / Global Burden of Disease", "source_url": "https://www.healthdata.org/results/gbd_summaries/2021" },
+    { "year": 2023, "census_division": "South Atlantic", "urban_rural": "metro", "intent": "homicide", "deaths": 5234, "rate_per_100k": 18.9, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "census_division": "East North Central", "urban_rural": "metro", "intent": "homicide", "deaths": 3891, "rate_per_100k": 16.2, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "census_division": "New England", "urban_rural": "fringe", "intent": "all", "deaths": 891, "rate_per_100k": 4.1, "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "census_division": "Middle Atlantic", "urban_rural": "metro", "intent": "all", "deaths": 2341, "rate_per_100k": 5.2, "source": "County Health Rankings", "source_url": "https://www.countyhealthrankings.org/" }
+  ],
+  "conditions": [
+    { "year": 2023, "condition_type": "children_under_18", "deaths": 501, "incidents": null, "children_involved": true, "notes": "Children and teens under 18 killed by firearms", "source": "CDC WONDER", "source_url": "https://wonder.cdc.gov/" },
+    { "year": 2023, "condition_type": "domestic_violence", "deaths": 1012, "incidents": null, "children_involved": null, "notes": "Intimate partner homicides involving firearms", "source": "Everytown for Gun Safety", "source_url": "https://everytownresearch.org/" },
+    { "year": 2023, "condition_type": "mass_shooting", "deaths": 44, "incidents": 38, "children_involved": null, "notes": "Mass shootings (4+ killed, excluding shooter)", "source": "Gun Violence Archive", "source_url": "https://www.gunviolencearchive.org/" },
+    { "year": 2023, "condition_type": "school_shooting", "deaths": 12, "incidents": 29, "children_involved": true, "notes": "Shootings on school grounds during school hours or events", "source": "Everytown for Gun Safety", "source_url": "https://everytownresearch.org/" },
+    { "year": 2023, "condition_type": "law_enforcement", "deaths": 636, "incidents": null, "children_involved": null, "notes": "People fatally shot by on-duty police officers", "source": "Washington Post Fatal Force", "source_url": "https://www.washingtonpost.com/graphics/investigations/police-shootings-database/" },
+    { "year": 2023, "condition_type": "unintentional_child", "deaths": 89, "incidents": null, "children_involved": true, "notes": "Unintentional shootings by or of children (under 18)", "source": "Everytown for Gun Safety", "source_url": "https://everytownresearch.org/" },
+    { "year": 2023, "condition_type": "gun_trafficking_interstate", "deaths": null, "incidents": 11000, "children_involved": null, "notes": "Firearms traced to out-of-state origins by ATF", "source": "ATF National Firearms Commerce and Trafficking Assessment", "source_url": "https://www.atf.gov/firearms/national-firearms-commerce-and-trafficking-assessment" }
+  ]
+}
