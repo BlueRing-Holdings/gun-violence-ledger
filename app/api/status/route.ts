@@ -2,6 +2,11 @@ export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
 
+async function countTable(supabase: ReturnType<typeof getSupabase>, table: string): Promise<number> {
+  const { count } = await supabase.from(table).select("*", { count: "exact", head: true });
+  return count ?? 0;
+}
+
 export async function GET() {
   const supabase = getSupabase();
 
@@ -48,16 +53,17 @@ export async function GET() {
   }
 
   // Total records across all tables
-  const counts = await Promise.all([
-    supabase.from("country_deaths").select("*", { count: "exact", head: true }),
-    supabase.from("annual_deaths").select("*", { count: "exact", head: true }),
-    supabase.from("daily_ytd").select("*", { count: "exact", head: true }),
-    supabase.from("conflict_deaths").select("*", { count: "exact", head: true }),
-    supabase.from("economic_costs").select("*", { count: "exact", head: true }),
-    supabase.from("policy_events").select("*", { count: "exact", head: true }),
-  ]);
+  const [countryCount, annualCount, dailyCount, conflictCount, costCount, policyCount] =
+    await Promise.all([
+      countTable(supabase, "country_deaths"),
+      countTable(supabase, "annual_deaths"),
+      countTable(supabase, "daily_ytd"),
+      countTable(supabase, "conflict_deaths"),
+      countTable(supabase, "economic_costs"),
+      countTable(supabase, "policy_events"),
+    ]);
 
-  const totalRecords = counts.reduce((s, c) => s + (c.count ?? 0), 0);
+  const totalRecords = countryCount + annualCount + dailyCount + conflictCount + costCount + policyCount;
 
   // Last audit
   const { data: lastAudit } = await supabase
