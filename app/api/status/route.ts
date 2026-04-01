@@ -22,7 +22,7 @@ export async function GET() {
   const { data: usCumRows } = await supabase.from("annual_deaths").select("deaths");
   const usCumulative = usCumRows?.reduce((s: number, r: { deaths: number }) => s + r.deaths, 0) ?? 0;
 
-  // Global latest year from WHO
+  // Global latest year from WHO (rates — widest coverage)
   const { data: globalLatest } = await supabase
     .from("country_deaths")
     .select("year")
@@ -32,23 +32,44 @@ export async function GET() {
     .single();
 
   const globalYear = globalLatest?.year ?? null;
-  let globalDeaths = 0;
   let countriesReporting = 0;
   let countriesGap = 0;
 
   if (globalYear) {
     const { data: globalRows } = await supabase
       .from("country_deaths")
-      .select("deaths, data_reported")
+      .select("data_reported")
       .eq("year", globalYear);
 
     for (const row of globalRows ?? []) {
-      if (row.data_reported) {
-        countriesReporting++;
-        globalDeaths += row.deaths ?? 0;
-      } else {
-        countriesGap++;
-      }
+      if (row.data_reported) countriesReporting++;
+      else countriesGap++;
+    }
+  }
+
+  // Global deaths sum — use latest year that has actual death counts
+  // (WHO HOMICIDENUM lags behind HOMICIDERATE by ~2 years)
+  let globalDeaths = 0;
+  let globalDeathsYear: number | null = null;
+
+  const { data: deathsLatest } = await supabase
+    .from("country_deaths")
+    .select("year")
+    .not("deaths", "is", null)
+    .order("year", { ascending: false })
+    .limit(1)
+    .single();
+
+  if (deathsLatest?.year) {
+    globalDeathsYear = deathsLatest.year;
+    const { data: deathRows } = await supabase
+      .from("country_deaths")
+      .select("deaths")
+      .eq("year", deathsLatest.year)
+      .not("deaths", "is", null);
+
+    for (const row of deathRows ?? []) {
+      globalDeaths += row.deaths ?? 0;
     }
   }
 
@@ -74,8 +95,9 @@ export async function GET() {
     .single();
 
   return NextResponse.json({
-    global_deaths_latest_year: globalYear,
+    global_deaths_latest_year: globalDeathsYear,
     global_deaths_latest: globalDeaths || null,
+    global_rates_year: globalYear,
     us_deaths_latest_year: usLatest?.year ?? null,
     us_deaths_latest: usLatest?.deaths ?? null,
     us_cumulative: usCumulative || null,

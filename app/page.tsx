@@ -6,6 +6,7 @@ import PageShell from "@/components/layout/PageShell";
 interface GlobalStatus {
   global_deaths_latest_year: number | null;
   global_deaths_latest: number | null;
+  global_rates_year: number | null;
   us_deaths_latest_year: number | null;
   us_deaths_latest: number | null;
   us_cumulative: number | null;
@@ -89,6 +90,25 @@ export default function HomePage() {
             : "La ausencia de datos también es un dato."}
         </p>
       </div>
+
+      {/* Global Deaths */}
+      {status?.global_deaths_latest && (
+        <div className="bg-[#111108] rounded-lg p-8 mb-8 text-center border border-[#2a2008]">
+          <p className="text-xs text-[#6b5a45] uppercase tracking-wider mb-3">
+            {lang === "en"
+              ? `Global Homicide Deaths — ${status.global_deaths_latest_year}`
+              : `Muertes por Homicidio Global — ${status.global_deaths_latest_year}`}
+          </p>
+          <p className="text-5xl sm:text-6xl font-serif text-[#f2ede4] tabular-nums mb-2">
+            {status.global_deaths_latest.toLocaleString()}
+          </p>
+          <p className="text-[#6b5a45] text-sm">
+            {lang === "en"
+              ? "reported to WHO across all countries"
+              : "reportadas a la OMS en todos los países"}
+          </p>
+        </div>
+      )}
 
       {/* US Counter Band */}
       <div className="bg-[#111108] rounded-lg p-8 mb-8 text-center border border-[#2a2008]">
